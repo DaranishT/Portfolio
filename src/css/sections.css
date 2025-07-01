@@ -5,7 +5,8 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding-top: 4rem;
+    padding-top: 0;
+    margin-top: 0;
     position: relative;
 }
 
@@ -23,30 +24,26 @@
 .hero-content {
     max-width: 800px;
     padding: 0 2rem;
+    margin-top: -4rem;
 }
 
 .hero h1 {
-    font-size: 4rem;
+    font-size: 3.5rem;
     margin-bottom: 1.5rem;
     text-transform: uppercase;
     letter-spacing: 3px;
+    margin-top: 0;
+    padding-top: 0;
 }
 
-.hero .greeting {
-    color: var(--primary);
-}
-
-.hero .name {
-    color: var(--dark);
-    text-shadow: 0 0 15px rgba(255, 125, 0, 0.5);
-}
-
-.hero .subtitle {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    color: rgba(26, 10, 10, 0.7);
-    letter-spacing: 1px;
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero .subtitle {
+        font-size: 1rem;
+    }
 }
 
 /* Sphere Section */
