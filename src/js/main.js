@@ -70,14 +70,14 @@ const projects = [
         description: "Interactive portfolio with Three.js and custom shaders",
         link: "project-details.html?project=3d-portfolio",
         texture: "https://images.unsplash.com/photo-1639762681057-408e52192e55?w=500&auto=format&fit=crop",
-        color: 0xff7d00
+        color: 0xfffff
     },
     {
         id: "web-application",
         title: "WEB_APPLICATION",
         description: "Modern web app with React and WebGL",
         link: "project-details.html?project=web-application",
-        texture: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=500&auto=format&fit=crop",
+        texture: "./textures/pixelGame.jpg",
         color: 0xff5e00
     },
     {
@@ -87,7 +87,16 @@ const projects = [
         link: "project-details.html?project=vr-experience",
         texture: "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=500&auto=format&fit=crop",
         color: 0x00a2ff
+    },
+    {
+        id: "ai-project",
+        title: "AI_VISUALIZER",
+        description: "Machine learning visualization",
+        link: "project-details.html?project=ai",
+        texture: "./textures/ai-texture.jpg",
+        color: 0x00ff88
     }
+
 ];
 
 // Create orbiting project spheres
