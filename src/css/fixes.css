@@ -1,0 +1,25 @@
+/* fixes.css */
+body {
+    overflow-x: hidden;
+}
+
+.hero {
+    margin-top: 70px;
+    height: calc(100vh - 70px);
+}
+
+#threejs-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.project-info {
+    z-index: 10;
+}
+
+.contact-section {
+    z-index: 1;
+    position: relative;
+}

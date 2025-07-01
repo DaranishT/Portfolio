@@ -49,7 +49,7 @@ directionalLight.position.set(1, 1, 1);
 scene.add(directionalLight);
 
 // Main wireframe sphere
-const geometry = new THREE.SphereGeometry(3, 32, 32);
+const geometry = new THREE.SphereGeometry(4, 32, 32);
 const material = new THREE.MeshPhongMaterial({ 
     color: 0xff7d00,
     wireframe: true,
@@ -93,12 +93,12 @@ const projects = [
 // Create orbiting project spheres
 const orbs = [];
 const orbCount = projects.length;
-const orbGeometry = new THREE.SphereGeometry(0.8, 32, 32);
+const orbGeometry = new THREE.SphereGeometry(1.2, 32, 32);
 const textureLoader = new THREE.TextureLoader();
 
 projects.forEach((project, i) => {
     const angle = (i / orbCount) * Math.PI * 2;
-    const distance = 5;
+    const distance = 6;
     const x = Math.cos(angle) * distance;
     const y = Math.sin(angle) * distance;
     const z = Math.sin(angle) * distance;
@@ -267,20 +267,25 @@ function animate() {
     sphere.rotation.y += scrollSpeed * 0.3;
     
     // Rotate orbiting spheres - slowed down
-    orbs.forEach((orb, i) => {
-        if (orb !== selectedOrb && orb !== hoveredOrb) {
-            const userData = orb.userData;
-            userData.angle += (userData.speed + scrollSpeed) * 0.3;
-            
-            orb.position.x = Math.cos(userData.angle) * 5;
-            orb.position.z = Math.sin(userData.angle) * 5;
-            orb.position.y = Math.sin(Date.now() * 0.001 + i) * 0.5;
-            
-            // Pulsing effect - slowed down
-            const pulse = Math.sin(Date.now() * 0.002 + i) * 0.05 + 1;
+// In the animate() function, replace the orb movement code with:
+orbs.forEach((orb, i) => {
+    if (orb !== selectedOrb) {
+        const userData = orb.userData;
+        userData.angle += userData.speed;
+        
+        orb.position.x = Math.cos(userData.angle) * 6;
+        orb.position.z = Math.sin(userData.angle) * 6;
+        orb.position.y = Math.sin(Date.now() * 0.001 + i) * 0.8;
+        
+        // Make sure hover/click states work
+        if (orb === hoveredOrb) {
+            orb.scale.set(1.3, 1.3, 1.3);
+        } else {
+            const pulse = Math.sin(Date.now() * 0.002 + i) * 0.1 + 1;
             orb.scale.set(pulse, pulse, pulse);
         }
-    });
+    }
+});
     
     // Starfield animation - slowed down
     stars.rotation.y += 0.0001;
@@ -323,7 +328,20 @@ function createStars() {
         }
     }
 }
-
+// Force redraw on load
+window.addEventListener('load', () => {
+    // Reset camera
+    camera.position.z = 12;
+    camera.updateProjectionMatrix();
+    
+    // Force sphere scaling
+    orbs.forEach(orb => {
+        orb.scale.set(1.2, 1.2, 1.2);
+    });
+    
+    // Trigger resize event
+    window.dispatchEvent(new Event('resize'));
+});
 createStars();
 
 // Start animation

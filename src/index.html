@@ -8,15 +8,19 @@
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/components.css">
     <link rel="stylesheet" href="./css/sections.css">
+    <link rel="stylesheet" href="./css/animations.css">
+    <link rel="stylesheet" href="./css/fixes.css"> <!-- New fixes file -->
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Background Elements -->
     <div id="stars"></div>
     <div id="stars2"></div>
     <div id="stars3"></div>
 
+    <!-- Fixed Navigation -->
     <nav class="navbar">
         <div class="container">
             <div class="logo">D<span>ARANISH</span></div>
@@ -33,68 +37,66 @@
         </div>
     </nav>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1><span class="greeting">HELLO_</span>I'M <span class="name">DARANISH</span></h1>
-            <p class="subtitle">// CREATIVE DEVELOPER SPECIALIZING IN 3D EXPERIENCES</p>
-            <a href="#sphere-scene" class="btn"><i class="fas fa-chevron-down"></i> EXPLORE WORK</a>
-        </div>
-    </section>
-
-    <section id="sphere-scene" class="sphere-section">
-        <canvas id="threejs-canvas"></canvas>
-        <div class="project-info" id="project-info">
-            <h3 id="project-title">PROJECT_TITLE</h3>
-            <p id="project-description">> CLICK_ON_SPHERE_TO_VIEW</p>
-            <a href="#" id="project-link" class="btn"><i class="fas fa-external-link-alt"></i> VIEW_PROJECT</a>
-        </div>
-    </section>
-
-
-    <script src="js/main.js"></script>
-    
-
-<section id="contact" class="contact-section">
-    <div class="container">
-        <h2><i class="fas fa-envelope"></i> CONTACT_ME</h2>
-        <p class="section-subtitle">Have a project in mind or want to collaborate? Get in touch!</p>
-        
-        <form id="contact-form" action="https://formspree.io/f/xanjvldn" method="POST">
-            <input type="hidden" name="_subject" value="New message from your portfolio!">
-            <input type="hidden" name="_replyto" value="%email%"> <!-- Will be auto-filled -->
-            <input type="hidden" name="_language" value="en"> <!-- Optional: Translation -->
-            
-            <div class="form-group">
-                <input type="text" name="name" id="name" required>
-                <label for="name">Your Name</label>
+    <!-- Main Content Sections -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1><span class="greeting">HELLO_</span>I'M <span class="name">DARANISH</span></h1>
+                <p class="subtitle">// CREATIVE DEVELOPER SPECIALIZING IN 3D EXPERIENCES</p>
+                <a href="#sphere-scene" class="btn"><i class="fas fa-chevron-down"></i> EXPLORE WORK</a>
             </div>
-            
-            <div class="form-group">
-                <input type="email" name="email" id="email" required>
-                <label for="email">Your Email</label>
+        </section>
+
+        <!-- 3D Sphere Section -->
+        <section id="sphere-scene" class="sphere-section">
+            <canvas id="threejs-canvas"></canvas>
+            <div class="project-info" id="project-info">
+                <h3 id="project-title">PROJECT_TITLE</h3>
+                <p id="project-description">> CLICK_ON_SPHERE_TO_VIEW</p>
+                <a href="#" id="project-link" class="btn"><i class="fas fa-external-link-alt"></i> VIEW_PROJECT</a>
             </div>
-            
-            <div class="form-group">
-                <input type="text" name="_subject" id="subject" required>
-                <label for="subject">Subject</label>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2><i class="fas fa-envelope"></i> CONTACT_ME</h2>
+                <p class="section-subtitle">Have a project in mind or want to collaborate? Get in touch!</p>
+                
+                <form id="contact-form" action="https://formspree.io/f/xanjvldn" method="POST">
+                    <input type="hidden" name="_subject" value="New message from your portfolio!">
+                    
+                    <div class="form-group">
+                        <input type="text" name="name" id="name" required>
+                        <label for="name">Your Name</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" name="email" id="email" required>
+                        <label for="email">Your Email</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="text" name="_subject" id="subject" required>
+                        <label for="subject">Subject</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea name="message" id="message" rows="5" required></textarea>
+                        <label for="message">Your Message</label>
+                    </div>
+                    
+                    <button type="submit" class="btn">
+                        <i class="fas fa-paper-plane"></i> SEND MESSAGE
+                    </button>
+                    
+                    <div id="form-status" class="form-status"></div>
+                </form>
             </div>
-            
-            <div class="form-group">
-                <textarea name="message" id="message" rows="5" required></textarea>
-                <label for="message">Your Message</label>
-            </div>
-            
-            <!-- Honeypot spam protection -->
-            <input type="text" name="_gotcha" style="display:none">
-            
-            <button type="submit" class="btn">
-                <i class="fas fa-paper-plane"></i> SEND MESSAGE
-            </button>
-            
-            <div id="form-status" class="form-status"></div>
-        </form>
-    </div>
-</section>
+        </section>
+    </main>
+
     <script type="module" src="./js/main.js"></script>
 </body>
 </html>
