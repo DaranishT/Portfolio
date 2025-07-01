@@ -1,0 +1,329 @@
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 2rem;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(255, 125, 0, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 125, 0, 0.5);
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 238, 217, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(255, 125, 0, 0.3);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--dark);
+    font-weight: 400;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 500;
+    transition: all 0.3s;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+    background-color: rgba(255, 125, 0, 0.1);
+}
+
+.nav-links i {
+    font-size: 1rem;
+}
+
+.nav-links span {
+    font-family: 'Roboto', sans-serif;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icons a {
+    color: var(--dark);
+    font-size: 1.2rem;
+    transition: all 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--primary);
+    transform: translateY(-2px);
+}
+
+/* Project Info */
+.project-info {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 238, 217, 0.95);
+    padding: 1.5rem 2rem;
+    border-radius: 1rem;
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+    pointer-events: auto;
+    opacity: 0;
+    transition: all 0.5s;
+    box-shadow: 0 0 20px rgba(255, 125, 0, 0.2);
+    border: 1px solid rgba(255, 125, 0, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.project-info.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-10px);
+}
+
+.project-info h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.project-info p {
+    color: rgba(26, 10, 10, 0.7);
+    margin-bottom: 1rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.project-info .btn {
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    font-size: 0.9rem;
+    padding: 0.6rem 1.5rem;
+}
+
+/* Contact Section Styles */
+.contact-section {
+    padding: 6rem 0;
+    background: rgba(255, 238, 217, 0.5);
+    position: relative;
+}
+
+.contact-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: rgba(26, 10, 10, 0.7);
+    margin-bottom: 3rem;
+    font-family: 'Roboto', sans-serif;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 1rem;
+    box-shadow: 0 5px 30px rgba(255, 125, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    background: transparent;
+    border: 1px solid rgba(255, 125, 0, 0.3);
+    border-radius: 0.5rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: var(--dark);
+    transition: all 0.3s;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.form-group label {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    color: rgba(26, 10, 10, 0.7);
+    font-family: 'Roboto', sans-serif;
+    transition: all 0.3s;
+    pointer-events: none;
+    padding: 0 0.5rem;
+    background: rgba(255, 238, 217, 0.9);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group input:valid,
+.form-group textarea:valid {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.form-group input:focus + label,
+.form-group textarea:focus + label,
+.form-group input:valid + label,
+.form-group textarea:valid + label {
+    top: -0.6rem;
+    left: 1rem;
+    font-size: 0.8rem;
+    color: var(--primary);
+    background: var(--cream-orange);
+}
+
+/* Enhanced Form Status Messages */
+.form-status {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    display: none;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.form-status.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.form-status.success {
+    background: rgba(40, 167, 69, 0.15);
+    color: #28a745;
+    border: 1px solid rgba(40, 167, 69, 0.3);
+}
+
+.form-status.error {
+    background: rgba(220, 53, 69, 0.15);
+    color: #dc3545;
+    border: 1px solid rgba(220, 53, 69, 0.3);
+}
+
+/* Mobile form adjustments */
+@media (max-width: 768px) {
+    #contact-form {
+        padding: 1.5rem;
+    }
+    
+    .form-group input, 
+    .form-group textarea {
+        font-size: 16px; /* Prevent iOS zoom */
+    }
+    
+    button[type="submit"] {
+        padding: 1rem;
+        font-size: 1.1rem;
+    }
+}
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 4rem 1rem;
+    }
+    
+    #contact-form {
+        padding: 1.5rem;
+    }
+}
+
+/* Add these mobile-specific styles */
+@media (max-width: 768px) {
+    /* Better touch targets */
+    .nav-links a, .btn {
+        padding: 1rem;
+    }
+    
+    /* Canvas adjustments */
+    #threejs-canvas {
+        touch-action: pan-y; /* Allows vertical scrolling over canvas */
+    }
+    
+    /* Project info larger on mobile */
+    .project-info {
+        width: 95%;
+        padding: 1.5rem;
+    }
+    
+    /* Sphere interaction hints */
+    .project-info p::after {
+        content: "TAP_ON_SPHERE_TO_VIEW";
+        display: block;
+        margin-top: 1rem;
+        font-weight: bold;
+    }
+}
+
+/* Prevent zooming on form inputs */
+input, textarea, select {
+    font-size: 16px;
+}

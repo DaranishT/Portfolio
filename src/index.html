@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daranish's 3D Portfolio</title>
+    <!-- CSS Imports -->
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/components.css">
+    <link rel="stylesheet" href="./css/sections.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">D<span>ARANISH</span></div>
+            <ul class="nav-links">
+                <li><a href="#home"><i class="fas fa-home"></i> <span>Home</span></a></li>
+                <li><a href="#about"><i class="fas fa-user"></i> <span>About</span></a></li>
+                <li><a href="#projects"><i class="fas fa-code"></i> <span>Projects</span></a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> <span>Contact</span></a></li>
+            </ul>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1><span class="greeting">HELLO_</span>I'M <span class="name">DARANISH</span></h1>
+            <p class="subtitle">// CREATIVE DEVELOPER SPECIALIZING IN 3D EXPERIENCES</p>
+            <a href="#sphere-scene" class="btn"><i class="fas fa-chevron-down"></i> EXPLORE WORK</a>
+        </div>
+    </section>
+
+    <section id="sphere-scene" class="sphere-section">
+        <canvas id="threejs-canvas"></canvas>
+        <div class="project-info" id="project-info">
+            <h3 id="project-title">PROJECT_TITLE</h3>
+            <p id="project-description">> CLICK_ON_SPHERE_TO_VIEW</p>
+            <a href="#" id="project-link" class="btn"><i class="fas fa-external-link-alt"></i> VIEW_PROJECT</a>
+        </div>
+    </section>
+
+
+    <script src="js/main.js"></script>
+    
+
+<section id="contact" class="contact-section">
+    <div class="container">
+        <h2><i class="fas fa-envelope"></i> CONTACT_ME</h2>
+        <p class="section-subtitle">Have a project in mind or want to collaborate? Get in touch!</p>
+        
+        <form id="contact-form" action="https://formspree.io/f/xanjvldn" method="POST">
+            <input type="hidden" name="_subject" value="New message from your portfolio!">
+            <input type="hidden" name="_replyto" value="%email%"> <!-- Will be auto-filled -->
+            <input type="hidden" name="_language" value="en"> <!-- Optional: Translation -->
+            
+            <div class="form-group">
+                <input type="text" name="name" id="name" required>
+                <label for="name">Your Name</label>
+            </div>
+            
+            <div class="form-group">
+                <input type="email" name="email" id="email" required>
+                <label for="email">Your Email</label>
+            </div>
+            
+            <div class="form-group">
+                <input type="text" name="_subject" id="subject" required>
+                <label for="subject">Subject</label>
+            </div>
+            
+            <div class="form-group">
+                <textarea name="message" id="message" rows="5" required></textarea>
+                <label for="message">Your Message</label>
+            </div>
+            
+            <!-- Honeypot spam protection -->
+            <input type="text" name="_gotcha" style="display:none">
+            
+            <button type="submit" class="btn">
+                <i class="fas fa-paper-plane"></i> SEND MESSAGE
+            </button>
+            
+            <div id="form-status" class="form-status"></div>
+        </form>
+    </div>
+</section>
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>

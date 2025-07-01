@@ -1,0 +1,41 @@
+/* Starfield Animation */
+#stars, #stars2, #stars3 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+#stars {
+    background: transparent;
+    animation: animStar 50s linear infinite;
+}
+
+#stars2 {
+    background: transparent;
+    animation: animStar 100s linear infinite;
+}
+
+#stars3 {
+    background: transparent;
+    animation: animStar 150s linear infinite;
+}
+
+@keyframes animStar {
+    from { transform: translateY(0); }
+    to { transform: translateY(-2000px); }
+}
+
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 1s infinite alternate;
+}
+
+@keyframes twinkle {
+    from { opacity: 0.3; }
+    to { opacity: 1; }
+}
